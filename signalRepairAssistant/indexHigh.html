@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>號誌設備重大故障搶修工作說明書</title>
+  <link rel="stylesheet" href="styles/indexStyles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>高運量緊急應變項目</h1>
+    <div class="main-buttons">
+      <a href="#" class="button"
+        onclick="showSubButtons(event, 'subButtons3')">AF軌道電路、PF軌道電路、失去速度碼</a>
+      <div class="sub-buttons" id="subButtons3">
+        <a href="./card/card1_AF.html" class="sub-button">AF軌道電路</a>
+        <a href="./card/card1_singlePF.html" class="sub-button">聯鎖區車站單一PF軌道電路</a>
+        <a href="./card/card1_multiplePF.html" class="sub-button">聯鎖區車站多數PF軌道電路</a>
+        <a href="./card/card1_losespeed.html" class="sub-button">失去速度碼</a>
+      </div>
+
+      <a href="#" class="button"
+        onclick="showSubButtons(event, 'subButtons4')">轉轍器</a>
+      <div class="sub-buttons" id="subButtons4">
+        <a href="./card/card2_unlocate.html" class="sub-button">重點站轉轍器無法定位</a>
+        <a href="./card/card2_TYPSR.html" class="sub-button">轉轍器電子鎖定及路徑無法解鎖(TYPSR失磁)</a>
+        <a href="./card/card2_LR.html" class="sub-button">轉轍器電子鎖定無法解鎖(LR失磁)</a>
+        <a href="./card/card2_ASR.html" class="sub-button">路徑無法解鎖(ASR失磁)</a>
+      </div>
+    </div>
+  </div>
+  <a href="./indexRoot.html" class="button">上一頁</a>
+  <script>
+    function showSubButtons(event, subButtonsId) {
+      event.preventDefault();
+      var subButtons = document.getElementById(subButtonsId);
+      var allSubButtons = document.querySelectorAll(".sub-buttons");
+      allSubButtons.forEach(function (buttonGroup) {
+        if (buttonGroup !== subButtons) {
+          buttonGroup.style.display = "none";
+        }
+      });
+      if (
+        subButtons.style.display === "none" ||
+        subButtons.style.display === ""
+      ) {
+        subButtons.style.display = "block";
+      } else {
+        subButtons.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
+</html>
